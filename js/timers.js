@@ -7,15 +7,20 @@ const btnFirstColor = document.querySelector('#firstColor');
 const btnBodyBlink = document.querySelector('#body-blink');
 const btnChangeEmojee = document.querySelector('#change-em');
 
+const inpNumBodyBlink = document.querySelector('#body-blink-num');
+const btnStopBodyBlinkAfterNum = document.querySelector('#stop-body-blink');
+const spanStopBodyAfterNum = document.querySelector('#stop-body-blink span');
+const btnStopBodyBlinkNow = document.querySelector('#stop-body-blink-now');
+
 const startHourglass = document.querySelector('.fa-hourglass-start');
 const halfHourglass = document.querySelector('.fa-hourglass-half');
 const endHourglass = document.querySelector('.fa-hourglass-end');
 
 let sleepTime = 2500;
-let timer1,timer2,timer3,timer4;
+let timer1,timer2,timer3,timer4,timer5;
 const emAr = ['😅','😈','🕺','💃'];
 let emCnt = 0;
-
+let numBodyBlinkStop = undefined, bodyBlinkCnt = 0, stopBodyBlink = false;
 
 /** MISSION
  * 
@@ -135,7 +140,9 @@ btnBodyBlink.addEventListener('click',() => {
 
     secondDiv.innerText = 'Body is going to blink ...'
 
-    setInterval(() => {
+    timer5 = setInterval(() => {
+
+        bodyBlinkCnt++;
 
         (document.body.classList.contains('purple')) 
 
@@ -154,6 +161,11 @@ btnBodyBlink.addEventListener('click',() => {
             ? document.body.classList.replace('yellow','red')
 
             : document.body.classList.replace('red','purple')
+
+
+            if (stopBodyBlink && numBodyBlinkStop 
+                   && bodyBlinkCnt >= numBodyBlinkStop) 
+                    clearInterval(timer5);
 
     },sleepTime)  
 
@@ -195,3 +207,25 @@ btnChangeEmojee.addEventListener('click',() => {
 
 
 })
+
+inpNumBodyBlink.addEventListener('input',function() {
+
+    console.log(this)
+    // if input.value is '' or 0, or negative we won't stop
+    numBodyBlinkStop = +this.value <= 0 ? undefined : +this.value; 
+    spanStopBodyAfterNum.innerText = numBodyBlinkStop 
+                                     ? numBodyBlinkStop
+                                     : 'X';
+
+})
+
+btnStopBodyBlinkAfterNum.addEventListener('click',() => {
+    stopBodyBlink = true;
+})
+
+/**
+ * MISSION:
+ * Add listener to the button btnStopBodyBlinkNow - to stop immedieately
+ * the body blinking. Use id that we assigned to "timer5"
+ * 
+ */
