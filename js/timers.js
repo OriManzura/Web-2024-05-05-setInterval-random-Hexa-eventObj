@@ -229,3 +229,9 @@ btnStopBodyBlinkAfterNum.addEventListener('click',() => {
  * the body blinking. Use id that we assigned to "timer5"
  * 
  */
+
+btnStopBodyBlinkNow.addEventListener('click',() => {
+
+    clearInterval(timer5);    
+
+})
