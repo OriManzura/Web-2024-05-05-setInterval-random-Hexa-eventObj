@@ -33,6 +33,21 @@ button {
     color: lightskyblue;
 }
 
+.red {
+    background: red;
+    color: lightskyblue;
+}
+
+.green {
+    background: green;
+    color: lightskyblue;
+}
+
+.yellow {
+    background: yellow;
+    color: navy;
+}
+
 .invisible {
     display: none;
 }

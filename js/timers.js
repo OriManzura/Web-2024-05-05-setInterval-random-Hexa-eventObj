@@ -4,6 +4,7 @@ const btnStart = document.querySelector('#start');
 const btnStop = document.querySelector('#stop');
 const btnShow = document.querySelector('#show');
 const btnFirstColor = document.querySelector('#firstColor');
+const btnBodyBlink = document.querySelector('#body-blink');
 
 const startHourglass = document.querySelector('.fa-hourglass-start');
 const halfHourglass = document.querySelector('.fa-hourglass-half');
@@ -124,4 +125,22 @@ btnStop.addEventListener('click',() => {
     clearTimeout(timer3);
     clearTimeout(timer4);
     
+})
+
+btnBodyBlink.addEventListener('click',() => {
+
+    secondDiv.innerText = 'Body is going to blink ...'
+
+    setInterval(() => {
+
+        (document.body.classList.contains('purple')) 
+
+            ? document.body.classList.replace('purple','orange')
+            
+            : document.body.classList.replace('orange','purple')
+            
+
+    },sleepTime)  
+
+
 })
