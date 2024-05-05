@@ -5,6 +5,7 @@ const btnStop = document.querySelector('#stop');
 const btnShow = document.querySelector('#show');
 const btnFirstColor = document.querySelector('#firstColor');
 const btnBodyBlink = document.querySelector('#body-blink');
+const btnChangeEmojee = document.querySelector('#change-em');
 
 const startHourglass = document.querySelector('.fa-hourglass-start');
 const halfHourglass = document.querySelector('.fa-hourglass-half');
@@ -12,6 +13,9 @@ const endHourglass = document.querySelector('.fa-hourglass-end');
 
 let sleepTime = 2500;
 let timer1,timer2,timer3,timer4;
+const emAr = ['😅','😈','🕺','💃'];
+let emCnt = 0;
+
 
 /** MISSION
  * 
@@ -141,7 +145,15 @@ btnBodyBlink.addEventListener('click',() => {
             
             ? document.body.classList.replace('orange','green')
 
-            : document.body.classList.replace('green','purple')
+            : document.body.classList.contains('green')
+
+            ? document.body.classList.replace('green','yellow')
+
+            : document.body.classList.contains('yellow') 
+
+            ? document.body.classList.replace('yellow','red')
+
+            : document.body.classList.replace('red','purple')
 
     },sleepTime)  
 
@@ -150,3 +162,19 @@ btnBodyBlink.addEventListener('click',() => {
      */
 
 })
+
+/** MISSION:
+ * 
+ *  1. Add listener to the button btnChangeEmojee. 
+ * 
+ *  2. On click it should write something in the secondDiv.
+ * 
+ *  3. After that it should start Interval timer.
+ * 
+ *  4. After the time passes it should 
+ * 
+ *     a) show in firstDiv the emojee from emAr with index emCnt (emojee counter).
+ *     b) Change emCnt
+ * 
+ */
+
