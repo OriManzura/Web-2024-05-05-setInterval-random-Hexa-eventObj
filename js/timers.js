@@ -137,10 +137,16 @@ btnBodyBlink.addEventListener('click',() => {
 
             ? document.body.classList.replace('purple','orange')
             
-            : document.body.classList.replace('orange','purple')
+            : document.body.classList.contains('orange')
             
+            ? document.body.classList.replace('orange','green')
+
+            : document.body.classList.replace('green','purple')
 
     },sleepTime)  
 
+    /** MISSION:
+     * Add to the loop of the colors also "red" and "yellow"
+     */
 
 })
