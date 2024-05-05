@@ -178,3 +178,20 @@ btnBodyBlink.addEventListener('click',() => {
  * 
  */
 
+btnChangeEmojee.addEventListener('click',() => {
+
+    secondDiv.innerText = 'Going to change emojees 🛠️'
+
+    setInterval(() => {
+
+        firstDiv.innerText = emAr[emCnt];
+
+        emCnt === emAr.length - 1 ? emCnt = 0 : emCnt++; 
+        // const emAr = ['😅','😈','🕺','💃'];
+    }, sleepTime) // Step 1: emCnt = 0, 😅, 0 !== 3 => emCnt = 1
+       // Step 2: emCnt = 1, 😈, 1 !== 3 => emCnt = 2
+       // Step 3: emCnt = 2, 🕺, 2 !== 3 => emCnt = 3
+       // Step 4: emCnt = 3, 💃, 3 === 3 => emCnt = 0
+
+
+})
