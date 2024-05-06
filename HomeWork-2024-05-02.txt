@@ -65,12 +65,27 @@
                   3. coffee
                    ....'
 
+      let str = '';
+      drinks.forEach((drink,idx) => {
+         str += 
+      })
+
       CHALLENGE: use reduce() for this
 
    b) Create function, avgOfArr(), that gets an array 
        of numbers, calculates the average of each second number
        (check the index for being even)
        (using forEach()) and rounds it to 2 digits after a dot.
+
+      function avgOfArr(ar) {
+
+            let sum = 0;
+            ar.forEach((num,ix) => {
+
+            })
+
+            return sum/...
+      }
 
        CHALLENG: use reduce() for this
 

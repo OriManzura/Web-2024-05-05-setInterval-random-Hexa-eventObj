@@ -106,3 +106,8 @@
     This one you could perform any amount of times too
 
 
+13. If you want to unite all the 3 commands into one:
+
+$ git add * && git commit -m"added New.html" && git push
+
+And use Arrow Up or Down to get to the command again
